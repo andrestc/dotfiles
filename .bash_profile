@@ -22,6 +22,3 @@ alias get='git '
 export GOPATH=$HOME/projects
 export EDITOR='vim'
 
-export DOCKER_HOST=tcp://192.168.99.100:2375
-unset DOCKER_TLS_VERIFY
-unset DOCKER_CERT_PATH
