@@ -20,5 +20,6 @@ alias got='git '
 alias get='git '
 
 export GOPATH=$HOME/projects
+export PATH="$PATH:$GOPATH/bin"
 export EDITOR='vim'
 
