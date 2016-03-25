@@ -3,8 +3,8 @@
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+brew tap homebrew/versions
 brew tap caskroom/cask
-
 brew update
 brew upgrade
 
@@ -33,4 +33,4 @@ apps=(
 	spotify
 )
 
-brew cask install "${apps[@]}$"
+brew cask install "${apps[@]}"
