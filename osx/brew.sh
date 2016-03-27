@@ -31,6 +31,10 @@ apps=(
 	firefox
 	google-chrome
 	spotify
+	iterm2
+	virtualbox
+	vagrant
+	slack
 )
 
 brew cask install "${apps[@]}"
