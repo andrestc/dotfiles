@@ -24,3 +24,10 @@ alias gx='gitx --all'
 
 alias got='git '
 alias get='git '
+
+# Tsuru
+alias t='tsuru '
+alias ta='tsuru-admin '
+
+# Go-Vim
+alias govim='vim -u ~/.vimrc.go'

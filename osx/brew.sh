@@ -17,6 +17,7 @@ apps=(
 	tig
 	wget
 	brew-cask
+	csshx
 )
 
 brew install "${apps[@]}"
