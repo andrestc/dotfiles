@@ -10,3 +10,5 @@ My configuration files.
 `$ chmod+x install.sh`
 
 `$ ./install.sh`
+
+`$ source ~/.bash_profile`
