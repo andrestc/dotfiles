@@ -13,12 +13,12 @@ apps=(
 	git
 	bash-completion2
 	wrk
-	tmux
 	tig
 	wget
 	brew-cask
 	csshx
 	mackup
+	go
 )
 
 brew install "${apps[@]}"
