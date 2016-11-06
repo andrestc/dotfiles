@@ -13,7 +13,6 @@ apps=(
 	git
 	bash-completion2
 	wrk
-	tmux
 	tig
 	wget
 	brew-cask
@@ -36,6 +35,7 @@ apps=(
 	virtualbox
 	vagrant
 	slack
+	iterm2
 )
 
 brew cask install "${apps[@]}"
