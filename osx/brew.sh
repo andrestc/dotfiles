@@ -17,6 +17,8 @@ apps=(
 	wget
 	brew-cask
 	csshx
+	mackup
+	go
 )
 
 brew install "${apps[@]}"
@@ -36,6 +38,7 @@ apps=(
 	vagrant
 	slack
 	iterm2
+	franz
 )
 
 brew cask install "${apps[@]}"
