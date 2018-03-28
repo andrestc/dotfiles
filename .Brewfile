@@ -1,2 +1,4 @@
 cask_args appdir: "/Applications"
-brew "neomutt/homebrew-neomutt/neomutt"
+brew "neomutt"
+brew "dialog"
+brew "offline-imap"
