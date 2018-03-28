@@ -1,0 +1,1 @@
+/Users/andre.carvalho/Dropbox/MackupGlobo/.bashrc
