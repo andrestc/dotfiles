@@ -17,7 +17,6 @@ remoteuser = asantostc@gmail.com
 sslcacertfile = /usr/local/etc/openssl/cert.pem
 remotepasseval = mailpasswd("asantostc")
 remoteport = 993
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
 sslcacertfile = /usr/local/etc/openssl/cert.pem
 realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
