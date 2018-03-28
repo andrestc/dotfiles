@@ -1,0 +1,24 @@
+[general]
+accounts = asantostc
+starttls = yes
+ssl = true
+pythonfile = ~/.config/mutt/credentials/imappwd.py
+
+[Account asantostc]
+
+localrepository = asantostc-local
+remoterepository = asantostc-remote
+
+[Repository asantostc-remote]
+auth_mechanisms = LOGIN
+type = Gmail
+remoteuser = asantostc@gmail.com
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+remotepasseval = mailpasswd("asantostc")
+remoteport = 993
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+
+[Repository asantostc-local]
+type = Maildir
+localfolders = ~/.mail/asantostc
