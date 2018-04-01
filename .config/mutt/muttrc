@@ -96,7 +96,8 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 bind index R        group-reply
 bind index <tab>    sync-mailbox
-bind index <space>  collapse-thread
+bind index - collapse-thread
+bind index _ collapse-all
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
@@ -134,10 +135,12 @@ bind compose p postpone-message
 bind index p recall-message
 
 # Contacts
-set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+set query_command = "contacts '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
 
+# Collapse all threads when opening a folder
+folder-hook . "push <collapse-all>\n"
 
 source personal.muttrc
 source etc/neonwolf
