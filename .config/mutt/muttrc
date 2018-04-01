@@ -123,5 +123,21 @@ bind pager R  group-reply
 # View attachments properly.
 bind attach <return> view-mailcap
 
+# Sidebar Navigation ---------------------------------
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+
+bind compose p postpone-message
+bind index p recall-message
+
+# Contacts
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+
 source personal.muttrc
 source etc/neonwolf

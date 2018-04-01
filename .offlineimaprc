@@ -1,17 +1,16 @@
 [general]
-ui = ttyui
+ui = TTY.TTYUI
 accounts = asantostc, gcom
 starttls = yes
 ssl = true
 pythonfile = ~/.config/mutt/credentials/imappwd.py
 maxsyncaccounts = 2
-fsync = False
+fsync = false
 
 [Account asantostc]
 
 localrepository = asantostc-local
 remoterepository = asantostc-remote
-postsynchook = notmuch new
 
 [Repository asantostc-remote]
 auth_mechanisms = LOGIN
@@ -66,6 +65,11 @@ nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Trash':     'trash',
                             '[Gmail]/All Mail':  'archive',
                             }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
+
 
 [Repository gcom-local]
 type = Maildir
