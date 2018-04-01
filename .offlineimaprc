@@ -1,5 +1,5 @@
 [general]
-ui = TTY.TTYUI
+ui = basic
 accounts = asantostc, gcom
 starttls = yes
 ssl = true

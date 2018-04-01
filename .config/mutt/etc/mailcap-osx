@@ -1,0 +1,8 @@
+document/pdf; ~/.config/mutt/etc/view_attachment %s -
+application/octet-stream; ~/.config/mutt/etc/view_attachment %s -
+mime_lookup application/octet-stream
+video/*; ~/.config/mutt/etc/view_attachment %s -
+image/*; ~/.config/mutt/etc/view_attachment %s -
+application/*; ~/.config/mutt/etc/view_attachment %s -
+text/html; ~/.config/mutt/etc/view_attachment %s html
+

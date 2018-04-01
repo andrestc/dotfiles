@@ -15,14 +15,5 @@ else
 	ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` >/dev/null || exit
 fi
 
-# Get current number of new mail, then begin sync.
-ori=$(find ~/.mail -wholename '*/new/*' | grep -vi "spam\|trash\|junk" | wc -l)
-offlineimap -o "$@"
+offlineimap -o -u quiet
 
-# Recount new mail.
-new=$(find ~/.mail -wholename '*/new/*' | grep -vi "spam\|trash\|junk" | wc -l)
-
-# If new mail has grown, play a notification.
-if [ "$new" -gt "$ori" ]; then
-	mpv --quiet ~/.config/mutt/etc/notify.opus
-fi
