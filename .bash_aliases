@@ -12,3 +12,7 @@ alias gout='git checkout'
 
 # Tsuru specific aliases
 alias kubenodes='kubectl get nodes -L tsuru.io/pool'
+
+# kubectl aliases
+alias k='kubectl'
+alias ksys='kubectl -n kube-system'
