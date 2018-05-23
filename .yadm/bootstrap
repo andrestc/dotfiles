@@ -1,13 +1,19 @@
 #!/bin/bash
 
-boostrap_fedora() {
+bootstrap_fedora() {
   echo "Bootstrapping Fedora distribution"
   
   sudo cp ~/.yum-repos/* /etc/yum.repos.d/
 
-  sudo dnf update -y
+  sudo dnf upgrade && sudo dnf update -y
+  sudo dnf install snapd
+  sudo ln -s /var/lib/snapd/snap /snap
 
-  xargs --arg-file="~/dnf-software" sudo dnf -y install
+  xargs --arg-file="/home/andrestc/dnf-software" sudo dnf -y install
+  xargs --arg-file="/home/andrestc/snaps-software" sudo snap install
+
+  sudo snap install skype --classic
+  sudo snap install slack --classic
 }
 
 system_type=$(uname -s)
@@ -35,7 +41,7 @@ if [ "$system_type" = "Linux" ]; then
   wget -O /home/andrestc/bin/kube-ps1.sh https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh
   wget -O /home/andrestc/bin/kctx https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
   wget -O /home/andrestc/bin/kns https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
-  curl -LO /home/andrestc/bin/minikube https://storage.googleapis.com/minikube/releases/v0.27.0/minikube-linux-amd64
+  wget -O /home/andrestc/bin/minikube https://storage.googleapis.com/minikube/releases/v0.27.0/minikube-linux-amd64
 
   chmod +x /home/andrestc/bin/*
 
