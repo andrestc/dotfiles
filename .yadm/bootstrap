@@ -32,11 +32,13 @@ if [ "$system_type" = "Linux" ]; then
   mkdir -p /home/andrestc/bin/
 
   wget -O /home/andrestc/bin/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
-  chmod +x /home/andrestc/bin/z.sh
-  
   wget -O /home/andrestc/bin/kube-ps1.sh https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh
-  chmod +x /home/andrestc/bin/kube-ps1.sh
-  
+  wget -O /home/andrestc/bin/kctx https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
+  wget -O /home/andrestc/bin/kns https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
+  curl -LO /home/andrestc/bin/minikube https://storage.googleapis.com/minikube/releases/v0.27.0/minikube-linux-amd64
+
+  chmod +x /home/andrestc/bin/*
+
   if [ -f /etc/os-release ]; then
     # freedesktop.org and systemd
     . /etc/os-release
