@@ -7,3 +7,15 @@
 [user]
 	name = André Carvalho
 	email = asantostc@gmail.com
+[alias]
+	change = covereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
+[diff]
+	compactionHeuristic = true
+	algorithm = patience
+[interactive]
+	diffFilter = diff-highlight
