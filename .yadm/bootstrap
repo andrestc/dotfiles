@@ -3,7 +3,7 @@
 boostrap_fedora() {
   echo "Bootstrapping Fedora distribution"
   
-  sudo cp ~/.repos/* /etc/yum.repos.d/
+  sudo cp ~/.yum-repos/* /etc/yum.repos.d/
 
   sudo dnf update -y
 
