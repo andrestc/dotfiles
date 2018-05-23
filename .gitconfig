@@ -4,3 +4,6 @@
 	rebase = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[user]
+	name = André Carvalho
+	email = asantostc@gmail.com
