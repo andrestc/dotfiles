@@ -1,5 +1,15 @@
 #!/bin/bash
 
+boostrap_fedora() {
+  echo "Bootstrapping Fedora distribution"
+  
+  sudo cp ~/.repos/* /etc/yum.repos.d/
+
+  sudo dnf update -y
+
+  xargs --arg-file="~/dnf-software" sudo dnf -y install
+}
+
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
@@ -20,12 +30,23 @@ fi
 if [ "$system_type" = "Linux" ]; then
 
   mkdir -p /home/andrestc/bin/
+
   wget -O /home/andrestc/bin/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
   chmod +x /home/andrestc/bin/z.sh
+  
   wget -O /home/andrestc/bin/kube-ps1.sh https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh
   chmod +x /home/andrestc/bin/kube-ps1.sh
-  # install linux packages
+  
+  if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+    OS=$NAME
+    VER=$VERSION_ID
+  fi
 
-  apt install snapd
-  snap install kubectl --classic
+  echo "$OS - $VER"
+  if [ "$OS" = "Fedora" ]; then
+    bootstrap_fedora
+  fi 
+
 fi
