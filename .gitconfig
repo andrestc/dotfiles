@@ -19,3 +19,5 @@
 	algorithm = patience
 [interactive]
 	diffFilter = diff-highlight
+[commit]
+	template = /home/andrestc/.git-commit-template
