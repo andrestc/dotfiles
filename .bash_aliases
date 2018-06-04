@@ -1,4 +1,8 @@
-alias ls='ls -GFh'
+alias ls='ls --color=auto'
+
+alias ll='ls -la'
+
+alias l.='ls -d .* --color=auto'
 
 # Git aliases
 alias gs='git status '
